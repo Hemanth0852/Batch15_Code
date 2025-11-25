@@ -1,0 +1,9 @@
+version: 2
+sources:
+    - name: datafeed_shared_schema
+      database: "{{('SALES')}}"
+      schema: RAWDATA
+      tables:
+        - name: Employees_Raw
+        - name: Employee_Functions
+        - name: raw_customerdata
