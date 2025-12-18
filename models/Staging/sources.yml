@@ -1,8 +1,8 @@
 version: 2
 sources:
     - name: snowflake_data
-      database: "{{('sales')}}"
-      schema: dev
+      database: "{{('SALES')}}"
+      schema: RAWDWATA
       tables:
         - name: RAW_LINEITEM
           columns:
@@ -24,7 +24,7 @@ sources:
             - name: n_name
               tests:
                 - not_null
-        - name: RAW_ORDERS
+        - name: RAW_ORDER
           columns:
             - name: o_orderkey
               tests:
@@ -32,22 +32,4 @@ sources:
                - not_null
 
         - name: RAW_CUSTOMER 
-          columns:
-           - name: c_custkey
-             tests:
-              - unique
-              - not_null
-           - name: c_name
-             tests:
-               - not_null
-        - name: RAW_SUPPLIER
-        - name: RAW_PARTSUPP
-        - name: RAW_PART
-        - name : RAW_REGION
-        - name : RAW_CUSTOMER_NATION
 
-    - name: snapshot_tables
-      database: "{{('sales')}}"
-      schema: DWH
-      tables:
-        - name: snap_ordersdetails
